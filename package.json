@@ -1,0 +1,24 @@
+{
+  "name": "undertale-rpg-website",
+  "version": "0.0.1",
+  "description": "A website for the UndertaleRPG bot!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Undertale-RPG/Undrtale-rpg.cf.git"
+  },
+  "author": "commander-r",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Undertale-RPG/Undrtale-rpg.cf/issues"
+  },
+  "homepage": "https://github.com/Undertale-RPG/Undrtale-rpg.cf#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
