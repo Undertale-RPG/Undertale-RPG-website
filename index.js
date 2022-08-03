@@ -16,6 +16,6 @@ app.get('/privacy', (req, res) => {
 //     res.sendFile(__dirname + '/pages' + '/terms.html');
 // });
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server is running on port 3000');
 });
