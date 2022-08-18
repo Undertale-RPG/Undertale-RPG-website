@@ -16,6 +16,17 @@ app.get('/privacy', (req, res) => {
 //     res.sendFile(__dirname + '/pages' + '/terms.html');
 // });
 
+
+app.get('/api/monsters', (req, res) => {
+    res.sendFile(__dirname + '/api' + '/monsters.json');
+});
+
+// make a auto redirect to a 404 page
+app.get('*', (req, res) => {
+    res.sendFile(__dirname + '/pages' + '/404.html');
+})
+
+
 app.listen(port, () => {
     console.log('Server is running on port 3000');
 });

@@ -118,6 +118,11 @@ li p a:hover {
   border-color: #0077ff;
 }
 
+p a:hover {
+  color: #0070f3;
+  border-color: #0077ff;
+}
+
 
 .card h2 {
   margin: 0 0 1rem 0;
