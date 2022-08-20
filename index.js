@@ -25,6 +25,10 @@ app.get('/api/monsters', (req, res) => {
     res.sendFile(__dirname + '/api' + '/monsters.json');
 });
 
+app.get('/api/bosses', (req, res) => {
+    res.sendFile(__dirname + '/api' + '/bosses.json');
+});
+
 // make a auto redirect to a 404 page
 app.get('*', (req, res) => {
     res.sendFile(__dirname + '/pages' + '/404.html');
