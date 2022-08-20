@@ -12,6 +12,10 @@ app.get('/privacy', (req, res) => {
     res.sendFile(__dirname + '/pages' + '/privacy.html');
 });
 
+app.get('/banappeal', (req, res) => {
+    res.sendFile(__dirname + '/pages' + '/banappeal.html');
+});
+
 // app.get('/terms', (req, res) => {
 //     res.sendFile(__dirname + '/pages' + '/terms.html');
 // });
