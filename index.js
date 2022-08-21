@@ -20,6 +20,10 @@ app.get('/faq', (req, res) => {
     res.sendFile(__dirname + '/pages' + '/faq.html');
 });
 
+app.get('/commands', (req, res) => {
+    res.sendFile(__dirname + '/pages' + '/commands.html');
+});
+
 // app.get('/terms', (req, res) => {
 //     res.sendFile(__dirname + '/pages' + '/terms.html');
 // });

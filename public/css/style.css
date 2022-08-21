@@ -178,6 +178,48 @@ p a:hover {
   margin-left: 1rem;
 }
 
+
+
+.command {
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-top: 10px;
+}
+
+.command:hover {
+  border-color: #0077ff;
+}
+
+.command h2 {
+  text-align: center;
+  color: #0077ff;
+}
+
+.command {
+  text-align: center;
+}
+
+b {
+  color: #0077ff;
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
