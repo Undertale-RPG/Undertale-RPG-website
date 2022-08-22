@@ -106,3 +106,4 @@ dist
 # TernJS port file
 .tern-port
 pages/commands.html
+pages/test.html
