@@ -39,7 +39,7 @@ app.get('/api/bosses', (req, res) => {
 
 // make a auto redirect to a 404 page
 app.get('*', (req, res) => {
-    res.sendFile(__dirname + '/pages' + '/404.html');
+    res.status(404).sendFile(__dirname + '/pages' + '/404.html');
 })
 
 
