@@ -29,13 +29,17 @@ app.get('/commands', (req, res) => {
 // });
 
 
-app.get('/api/monsters', (req, res) => {
-    res.sendFile(__dirname + '/api' + '/monsters.json');
-});
+const fs = require('fs');
+const dir = './api';
+const files = fs. readdirSync(dir).filter(file => file.endsWith('.json'));
 
-app.get('/api/bosses', (req, res) => {
-    res.sendFile(__dirname + '/api' + '/bosses.json');
-});
+
+for (const file of files) {
+    const defFile = file.replace('.json', '');
+    app.get('/api/'+defFile, (req, res) => {
+        res.status(200).sendFile(__dirname + '/api/' + defFile + '.json');
+    })
+}
 
 // make a auto redirect to a 404 page
 app.get('*', (req, res) => {
