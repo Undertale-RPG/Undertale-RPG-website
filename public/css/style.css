@@ -94,6 +94,14 @@ a {
   max-width: 800px;
 }
 
+.grid2 {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+
 .card {
   margin: 1rem;
   padding: 1.5rem;
@@ -106,6 +114,18 @@ a {
   max-width: 300px;
 }
 
+.card2 {
+  margin: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  min-width: 300px;
+}
+
 .card:hover,
 .card:focus,
 .card:active {
@@ -113,7 +133,19 @@ a {
   border-color: #0077ff;
 }
 
+.card2:hover,
+.card2:focus,
+.card2:active {
+  color: #0070f3;
+  border-color: #0077ff;
+}
+
 li p a:hover {
+  color: #0070f3;
+  border-color: #0077ff;
+}
+
+p a:hover {
   color: #0070f3;
   border-color: #0077ff;
 }
@@ -130,10 +162,63 @@ li p a:hover {
   line-height: 1.5;
 }
 
+.card2 h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.card2 p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
 .logo {
   height: 10em;
   margin-left: 1rem;
 }
+
+
+
+.command {
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-top: 10px;
+}
+
+.command:hover {
+  border-color: #0077ff;
+}
+
+.command h2 {
+  text-align: center;
+  color: #0077ff;
+}
+
+.command {
+  text-align: center;
+}
+
+b {
+  color: #0077ff;
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+
 
 @media (max-width: 600px) {
   .grid {
