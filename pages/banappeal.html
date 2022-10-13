@@ -8,6 +8,37 @@
         <link rel="icon" href="./images/favicon.png">
         <link rel="stylesheet" href="/css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script>
+            window.onload = () => {
+                const fragment = new URLSearchParams(window.location.hash.slice(1));
+                const tokenType = fragment.get('token_type')
+                const accessToken = fragment.get('access_token');
+
+
+                if (!accessToken) {
+                    window.location.href = '/discord/login'
+                }
+            
+            
+                fetch('https://discord.com/api/users/@me', {
+                    headers: {
+                        authorization: `${tokenType} ${accessToken}`,
+                    },
+                })
+                .then(result => result.json())
+                .then(response => {
+                    const { username, discriminator, avatar, id} = response;
+                    //set the welcome username string
+                    document.getElementById('username').value = ` ${username}#${discriminator}`;
+                    document.getElementById('D-ID').value = ` ${id}`;
+                
+                    //set the avatar image by constructing a url to access discord's cdn
+                    document.getElementById("avatar").src = `https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg`;
+                })
+                .catch(console.error);
+            };
+        </script>
     </head>
     <body>
         <div class="container">
@@ -15,18 +46,66 @@
                 <h1 class="title">
                     Ban appeal
                 </h1>
-
+                <img id="avatar" src="" alt="" style="display: none;">
                 <p class="description">
                     Are you banned from the Undertale RPG server? Send in your ban appeal here!
                 </p>
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScVnEI98xlSmEqEPiCVWTn3XcD1eAYsSiB-JxI54wNS3orp6g/viewform?embedded=true" width="640" height="900" frameborder="0" marginheight="0" marginwidth="0">Laden…</iframe>
-                <div class="footer2">
-                    <a href="/">Go back home</a>
+
+                <form>
+                    <label for="username">Username: </label>
+                    <input type="text" id="username" name="username" disabled required><br>
+
+                    <label for="userId">User ID: </label>
+                    <input type="text" id="D-ID" name="userId" disabled required><br>
+
                     <br>
-                    <!-- <a href="/terms">Terms of Services</a> -->
+                    <hr>
+                    <br>
+
+                    <label for="reason">* Why were you banned</label>
+                    <input type="text" id="reason" name="reason" required><br>
+
+                    <label for="reason2">* Why should you be unbanned</label>
+                    <input type="text" id="reason2" name="reason2" required><br>
+
+                    <label for="time">* When were you banned</label>
+                    <input type="date" id="time" name="time" required><br>
+
+                    <input type="submit" onClick="sendMessage()" value="Submit this form">
+                </form>
+
+                <div class="footer2">
+                    <a href="/banappeal2">For non-chrome browsers</a><br>
+                    <a href="/">Go back home</a>
                 </div>
             </main>
         </div>
-    
     </body>
+    <script>
+        async function sendMessage() {
+          var today = new Date();
+		  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            
+          const request = new XMLHttpRequest();
+          request.open("POST", "https://discord.com/api/webhooks/1018962505197965393/LzV2lrrlSOifNz9q9a_fG_a-T4nazkwL-3VC4psnj3xwj9wNLVjxXIesz7RJ1R96XgvG");
+          request.setRequestHeader('Content-type', 'application/json');
+
+            const params = {
+                embeds: [{
+                   "title": "Ban Appeal!",
+                    "description": `User: ${await document.getElementById(`username`).value} | ${await document.getElementById('D-ID').value}`,
+                    "fields": [
+                        { "name": `Reason for the ban`, "value": `${await document.getElementById('reason').value}` },
+                        { "name": `Reason why they should be unbanned`, "value": `${await document.getElementById('reason2').value}`},
+                        { "name": `Date banned`, 'value': `${await document.getElementById('time').value}`},
+                        { "name": `Current Date`, 'value': `${await date}` },
+                    ],
+                    "color": "14537583",
+                    "thumbnail": {"url": `${await document.getElementById('avatar').src}`}
+                }],
+            }
+      	console.log(params)
+          request.send(JSON.stringify(params));
+        }
+    </script>
 </html>

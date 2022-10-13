@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 22398;
+global.config = require('./config.json');
 
 app.use(express.static(__dirname + '/public'));
 
@@ -16,9 +17,21 @@ app.get('/terms', (req, res) => {
     res.sendFile(__dirname + '/pages' + '/terms.html');
 });
 
-app.get('/banappeal', (req, res) => {
-    res.sendFile(__dirname + '/pages' + '/banappeal.html');
+app.get('/auth/discord', (req, res) => {
+    res.status(200).status(200).redirect('/banappeal')
 });
+
+app.get('/discord/login', (req, res) => {
+    res.status(200).redirect('https://discord.com/api/oauth2/authorize?client_id=815153881217892372&redirect_uri=https%3A%2F%2Fundertalerpg.monster%2Fauth%2Fdiscord&response_type=token&scope=identify');
+});
+
+app.get('/banappeal', (req, res) => {
+    res.status(200).sendFile(__dirname + '/pages' + '/banappeal.html');
+});
+
+app.get('/banappeal2', (req, res) => {
+    res.status(200).sendFile(__dirname + '/pages' + '/banappealOLD.html')
+})
 
 app.get('/faq', (req, res) => {
     res.sendFile(__dirname + '/pages' + '/faq.html');
