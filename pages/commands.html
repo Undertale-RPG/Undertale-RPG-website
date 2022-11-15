@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Commands | Undertale RPG</title>
+        <meta name="description" content="Need info about a command, or want to see what the bot can do? Find them here!" />
+        <meta name="theme-color" content="#0077ff" />
+        <link rel="icon" href="/images/favicon.png">
+        <link rel="stylesheet" href="/css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <main class="main">
+                <h1 class="title">Commands</h1>
+                <div id="desc" style="text-align:center">Find information about commands here!<br>Everything in between of these <b>()</b> brackets are required arguments, and everything in between of these <b>[]</b> brackets are optional arguments</div>
+                <div class="dropdown" style="margin: 10px;">
+                    <button class="dropbtn">Commands</button>
+                    <div class="dropdown-content">
+                        <a onClick="showBot()" style="cursor:pointer">Bot</a>
+                        <a onClick="showEconomy()" style="cursor:pointer">Economy</a>
+                        <a onClick="showExplore()" style="cursor:pointer">Explore</a>
+                        <a onClick="showHelp()" style="cursor:pointer">Help</a>
+                        <a onClick="showShop()" style="cursor:pointer">Shop</a>
+                    </div>
+                </div>
+                <div id="bot" style="display: none;">
+                    <div class="command">
+                        <h2>/invite</h2>
+                        <h5>usage: "/invite"</h5>
+                        <p>
+                            Invite the bot into your own server.
+                        </p>
+                    </div>
+                    <div class="command">
+                        <h2>/ping</h2>
+                        <h5>usage: "/ping"</h5>
+                        <p>
+                            Shows you the latency of the bot.
+                        </p>
+                    </div>
+                    <div class="command">
+                        <h2>/botinfo</h2>
+                        <h5>usage: "/botinfo"</h5>
+                        <p>
+                            Shows you the statistics of the bot.
+                        </p>
+                    </div>
+                    <div class="command">
+                        <h2>/vote</h2>
+                        <h5>usage: "/vote"</h5>
+                        <p>
+                            Sends a link to the top.gg site to vote for out bot, so you can get a reward :)
+                        </p>
+                    </div>
+                </div>
+                <div id="economy" style="display: none;">
+                    <div class="command">
+                        <h2>/supporter</h2>
+                        <h5>usage: "/supporter"</h5>
+                        <p>
+                            Let's you claim a bonus for being in our support server.
+                        </p>
+                    </div>
+                    <div class="command">
+                        <h2>/gold</h2>
+                        <h5>usage: "/gold <b>[</b>member:@user<b>]</b>"</h5>
+                        <p>
+                            Shows how much gold you have.
+                        </p>
+                    </div>
+                    <div class="command">
+                        <h2>/stats</h2>
+                        <h5>usage: "/stats <b>[</b>member:@user<b>]</b>"</h5>
+                        <p>
+                            Shows you your stats, that are stored in the database of the bot.
+                        </p>
+                    </div>
+                    <div class="command">
+                        <h2>/booster</h2>
+                        <h5>usage: "/booster"</h5>
+                        <p>
+                            Rewards the boosters of the support server with some gold.
+                        </p>
+                    </div>
+                    <div class="command">
+                        <h2>/daily</h2>
+                        <h5>usage: "/daily"</h5>
+                        <p>
+                            Gives you a daily reward.
+                        </p>
+                    </div>
+                </div>
+                <div id="explore" style="display: none;">
+                    <div class="command">
+                        <h2>/boss</h2>
+                        <h5>usage: "/boss"</h5>
+                        <p>
+                            This command will allow you to fight a boss of the current area you are in.
+                        </p>
+                    </div>
+                    <div class="command">
+                        <h2>/explore</h2>
+                        <h5>usage: "/explore"</h5>
+                        <p>
+                            This command will allow you to explore the world.
+                        </p>
+                    </div>
+                    <div class="command">
+                        <h2>/reset</h2>
+                        <h5>usage: "/reset"</h5>
+                        <p>
+                            This command will reset your stats, but adds a multiplier to your gold and EXP gain.
+                        </p>
+                    </div>
+                    <div class="command">
+                        <h2>/travel</h2>
+                        <h5>usage: "/travel"</h5>
+                        <p>
+                            This command allows you to travel to a different area.
+                        </p>
+                    </div>
+                    <div class="command">
+                        <h2>/leaderboard</h2>
+                        <h5>usage: "/leaderboard <b>(</b>lb:gold, exp, resets, kills, spares, deaths<b>)</b>"</h5>
+                        <p>
+                            Displays the leaderboard for either the gold, exp, resets, kills, spares or deaths.
+                        </p>
+                    </div>
+                </div>
+                <div id="help" style="display: none;">
+                    <div class="command">
+                        <h2>/event</h2>
+                        <h5>usage: "/event"</h5>
+                        <p>
+                            This command will allow you to see the current/upcomming event.
+                        </p>
+                    </div>
+                    <div class="command">
+                        <h2>/tutorial</h2>
+                        <h5>usage: "/tutorial"</h5>
+                        <p>
+                            This command shows you how the bot works, what you can do, etc.
+                        </p>
+                    </div>
+                    <div class="command">
+                        <h2>/help</h2>
+                        <h5>usage: "/help"</h5>
+                        <p>
+                            This shows you all the bot's commands, and gives you a link to the website and support server.
+                        </p>
+                    </div>
+                </div>
+                <div id="shop" style="display: none;">
+                    <div class="command">
+                        <h2>/shop</h2>
+                        <h5>usage: "/shop"</h5>
+                        <p>
+                            This command will allow you to buy stuff from the shop in that current area.
+                        </p>
+                    </div>
+                    <div class="command">
+                        <h2>/crates</h2>
+                        <h5>usage: "/crates"</h5>
+                        <p>
+                            Shows you your crates and lets you open them.
+                        </p>
+                    </div>
+                    <div class="command">
+                        <h2>/inventory</h2>
+                        <h5>usage: "/inventory"</h5>
+                        <p>
+                            This command will show your inventory.
+                        </p>
+                    </div>
+                    <div class="command">
+                        <h2>/use</h2>
+                        <h5>usage: "/use"</h5>
+                        <p>
+                            This command let's you use an item.
+                        </p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+    <script>
+        function showBot() {
+            const bot = document.getElementById("bot");
+            bot.style.display = "block";
+            const economy = document.getElementById("economy");
+            economy.style.display = "none";
+            const explore = document.getElementById("explore");
+            explore.style.display = "none";
+            const help = document.getElementById("help");
+            help.style.display = "none";
+            const shop = document.getElementById("shop");
+            shop.style.display = "none";
+        }
+        function showEconomy() {
+            const bot = document.getElementById("bot");
+            bot.style.display = "none";
+            const economy = document.getElementById("economy");
+            economy.style.display = "block";
+            const explore = document.getElementById("explore");
+            explore.style.display = "none";
+            const help = document.getElementById("help");
+            help.style.display = "none";
+            const shop = document.getElementById("shop");
+            shop.style.display = "none";
+        }
+        function showExplore() {
+            const bot = document.getElementById("bot");
+            bot.style.display = "none";
+            const economy = document.getElementById("economy");
+            economy.style.display = "none";
+            const explore = document.getElementById("explore");
+            explore.style.display = "block";
+            const help = document.getElementById("help");
+            help.style.display = "none";
+            const shop = document.getElementById("shop");
+            shop.style.display = "none";
+        }
+        function showHelp() {
+            const bot = document.getElementById("bot");
+            bot.style.display = "none";
+            const economy = document.getElementById("economy");
+            economy.style.display = "none";
+            const explore = document.getElementById("explore");
+            explore.style.display = "none";
+            const help = document.getElementById("help");
+            help.style.display = "block";
+            const shop = document.getElementById("shop");
+            shop.style.display = "none";
+        }
+        function showShop() {
+            const bot = document.getElementById("bot");
+            bot.style.display = "none";
+            const economy = document.getElementById("economy");
+            economy.style.display = "none";
+            const explore = document.getElementById("explore");
+            explore.style.display = "none";
+            const help = document.getElementById("help");
+            help.style.display = "none";
+            const shop = document.getElementById("shop");
+            shop.style.display = "block";
+        }
+    </script>
+    <style>
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: 1px solid #0077ff;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropbtn {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        .dropbtn:hover {
+            background-color: #0077ff;
+            border-color: none;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+
+        }
+        .dropdown-content a:hover {
+            background-color: #0077ff;
+            border: 1px solid #004a9e
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</html>

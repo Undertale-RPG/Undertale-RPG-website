@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const port = 22398;
-global.config = require('./config.json');
 
 app.use(express.static(__dirname + '/public'));
 
