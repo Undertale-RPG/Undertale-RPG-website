@@ -16,11 +16,11 @@
                 <div class="dropdown" style="margin: 10px;">
                     <button class="dropbtn">Commands</button>
                     <div class="dropdown-content">
-                        <a onClick="showBot()" style="cursor:pointer">Bot</a>
+                        <a id="first" onClick="showBot()" style="cursor:pointer">Bot</a>
                         <a onClick="showEconomy()" style="cursor:pointer">Economy</a>
                         <a onClick="showExplore()" style="cursor:pointer">Explore</a>
                         <a onClick="showHelp()" style="cursor:pointer">Help</a>
-                        <a onClick="showShop()" style="cursor:pointer">Shop</a>
+                        <a id="last" onClick="showShop()" style="cursor:pointer">Shop</a>
                     </div>
                 </div>
                 <div id="bot" style="display: none;">
@@ -273,7 +273,6 @@
             border-top-right-radius: 10px;
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
-
         }
         .dropdown-content a {
             float: none;
@@ -294,14 +293,26 @@
             border-color: none;
             border-bottom-left-radius: 0px;
             border-bottom-right-radius: 0px;
-
+        }
+        .dropdown:hover .dropbtn {
+            background-color: #0077ff;
+            border-color: none;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
         }
         .dropdown-content a:hover {
             background-color: #0077ff;
-            border: 1px solid #004a9e
+            border: 1px solid #004a9e;
         }
         .dropdown:hover .dropdown-content {
             display: block;
+        }
+        .dropdown-content:hover #first {
+            border-top-right-radius: 10px;
+        }
+        .dropdown-content:hover #last {
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
         }
     </style>
 </html>
