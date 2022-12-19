@@ -24,6 +24,10 @@ app.get('/discord/login', (req, res) => {
     res.status(200).redirect('https://discord.com/api/oauth2/authorize?client_id=815153881217892372&redirect_uri=https%3A%2F%2Fundertalerpg.monster%2Fauth%2Fdiscord&response_type=token&scope=identify');
 });
 
+app.get('/invite', (req, res) => {
+    res.status(200).redirect('https://discord.com/api/oauth2/authorize?client_id=748868577150369852&permissions=415001603136&scope=bot%20applications.commands');
+});
+
 app.get('/banappeal', (req, res) => {
     res.status(200).sendFile(__dirname + '/pages' + '/banappeal.html');
 });
